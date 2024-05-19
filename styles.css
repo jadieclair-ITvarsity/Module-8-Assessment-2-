@@ -1,4 +1,5 @@
 body {
+  background-image: url(images/calc-bg.png);
   margin: 0;
   display: flex;
   justify-content: center;
@@ -6,31 +7,35 @@ body {
   height: 100vh;
 }
 
+/* Calculator */
 #calculator {
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(26, 25, 25);
   border-radius: 15px;
-  max-width: 500px;
+  max-width: 400px;
   overflow: hidden;
 }
 
+/* Screen output */
 #display {
   width: 100%;
-  padding: 20px;
-  font-size: 5rem;
+  padding: 15px;
+  font-size: 4rem;
   color: #fff;
   text-align: left;
   border: none;
   background-color: rgb(44, 44, 44);
 }
 
+/* Button keys display */
 #keys {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  padding: 20px;
+  padding: 10px;
 }
 
+/* Button design */
 button {
   width: 80px;
   height: 80px;
@@ -38,7 +43,7 @@ button {
   border: none;
   background-color: rgb(72, 71, 71);
   color: #fff;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
   cursor: pointer;
 }
@@ -63,9 +68,31 @@ button:active {
   background-color: rgb(159, 118, 40);
 }
 
+.clear-operator-btn {
+  background-color: rgb(138, 137, 137);
+}
+
+.clear-operator-btn:hover {
+  background-color: rgb(170, 170, 169);
+}
+
+.clear-operator-btn:active {
+  background-color: rgb(181, 180, 179);
+}
+
 .equals-btn {
+  background-color: rgb(238, 155, 1);
   grid-column: span 4;
   width: 100%;
   height: 100%;
   border-radius: 5px;
+  font-size: 3rem;
+}
+
+.equals-btn:hover {
+  background-color: rgb(195, 137, 30);
+}
+
+.equals-btn:active {
+  background-color: rgb(159, 118, 40);
 }
