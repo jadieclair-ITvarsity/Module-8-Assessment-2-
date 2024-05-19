@@ -26,13 +26,13 @@ const clearDisplay = () => {
 // Function for operator buttons
 const operatorButton = (operator) => {
   currentOperator = operator;
-  firstValue = parseInt(display.value);
+  firstValue = parseFloat(display.value);
   newLine = true;
 };
 
 // Function nad switch statement for total calculations
 const calculate = () => {
-  let secondValue = parseInt(display.value);
+  let secondValue = parseFloat(display.value);
   let total;
 
   switch (currentOperator) {
@@ -48,6 +48,15 @@ const calculate = () => {
     case "/":
       total = firstValue / secondValue;
       break;
+    default:
+      return;
+  }
+
+  // Limit the number of decimal places
+  if (!isFinite(total)) {
+    display.value = "Error";
+  } else {
+    display.value = parseFloat(total.toPrecision(5));
   }
 
   // Output total to screen
